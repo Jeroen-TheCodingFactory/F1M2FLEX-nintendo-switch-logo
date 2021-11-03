@@ -1,0 +1,115 @@
+*, *::before, *::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --joycon-red:#ff4333;
+    --joycon-blue:#00bce4;
+    --logo-white: white;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background:linear-gradient( 90deg, var(--joycon-blue) 50%, var(--joycon-red) 50%);
+}
+
+
+.switchLogo{
+    width:40rem;
+    height:40rem;
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.joycon{
+    width:9rem;
+    height:21rem;
+    border: 1.5rem solid var(--logo-white);
+    position:relative;
+}
+
+.joycon--left{
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+}
+
+.joycon--right{
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    background: var(--logo-white);
+}
+
+.joycon--left::after, .joycon--right::after{
+    content:"";
+    position: absolute;
+    height:3.8rem;
+    width:3.8rem;
+    border-radius: 50%;
+    background:var(--logo-white);
+    left: 50%;
+}
+
+.joycon--left::after{
+    top:15%;
+    transform: translateX(-50%);
+}
+.joycon--right::after{
+    background: var(--joycon-red);
+    top: 57%;
+    transform: translate(-50%,-50%);
+}
+
+.a-click, .a-click2{
+    animation:click;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+
+.a-click2{
+    animation-name: click2;
+}
+
+@keyframes click{
+    0%{
+        transform: translateY(-8rem);
+    }
+    93%{
+        transform: translateY(-8rem);
+    }
+    98%{
+        transform: translateY(2rem);
+    }
+    100%{
+        transform: translateY(0);
+ 
+    }
+}
+
+
+@keyframes click2{
+    0%{
+        transform: translateY(0);
+    }
+    93%{
+        transform: translateY(0);
+    }
+    98%{
+        transform: translateY(2rem);
+    }
+    100%{
+        transform: translateY(0);
+ 
+    }
+}
